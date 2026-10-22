@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-navy-950 font-sans text-white antialiased;
+  }
+  ::selection {
+    @apply bg-ember text-white;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-[11px] uppercase tracking-eyebrow;
+  }
+  .field {
+    @apply w-full bg-navy-700/60 px-4 py-3.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-ember;
+  }
+}
