@@ -18,7 +18,8 @@ export function RestaurantsGrid({ locations }: { locations: Location[] }) {
               <Photo
                 slot={loc.cardImage}
                 className="transition-transform duration-700 group-hover:scale-105"
-                sizes="(min-width: 768px) 33vw, 100vw"
+                // Landscape photos are cropped into a 3:4 card, so they render ~2.75x the card width.
+                sizes="(min-width: 768px) 92vw, 275vw"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/30" />
               <div className="absolute left-5 right-5 top-5 flex items-start gap-3">

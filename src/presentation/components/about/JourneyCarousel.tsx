@@ -15,7 +15,7 @@ export function JourneyCarousel({ steps }: { steps: JourneyStep[] }) {
               className="w-[88%] shrink-0 snap-start sm:w-[60%] lg:w-[45%]"
             >
               <div className="relative aspect-[3/2]">
-                <Photo slot={s.image} sizes="(min-width: 1024px) 45vw, 88vw" />
+                <Photo slot={s.image} sizes="(min-width: 1024px) 62vw, (min-width: 640px) 83vw, 121vw" />
               </div>
               <p className="mt-5 text-[11px] font-semibold tracking-[0.2em] text-white/60">
                 {s.year}
