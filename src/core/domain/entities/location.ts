@@ -23,6 +23,7 @@ export interface Location {
   shortName: string;
   region: string;
   phone: string;
+  email: string;
   address: string;
   mapUrl: string;
   cardImage: ImageSlot;

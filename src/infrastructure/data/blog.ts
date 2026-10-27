@@ -9,7 +9,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Christmas lunches and festive dinners with Mediterranean flavours and warm hospitality.",
     date: "2026-10-01",
     category: "Christmas",
-    image: imageSlot("Blog: Christmas celebration at Haz", "/images/photo-29.jpg"),
+    image: imageSlot("Blog: Christmas celebration at Haz", "/images/photo-29.webp"),
     body: [
       "The best Christmas celebrations give everyone a chance to slow down, share good food and enjoy each other's company. Whether you're organising a Christmas lunch with colleagues or a festive dinner with friends, HAZ brings Mediterranean flavours and warm hospitality to the occasion.",
       "With restaurants at St Paul's, Bishopsgate, Finsbury Square, Premier Place and Plantation Place, HAZ offers a choice of City of London locations for your festive gathering.",

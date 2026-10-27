@@ -1,7 +1,7 @@
 import { imageSlot } from "@/core/domain/entities/image";
 import { Photo } from "../ui/Photo";
 
-const hero = imageSlot("Home hero: HAZ dining room (full-bleed)", "/images/haz-home-hero.jpg");
+const hero = imageSlot("Home hero: HAZ dining room (full-bleed)", "/images/haz-home-hero.webp");
 
 export function HomeHero() {
   return (

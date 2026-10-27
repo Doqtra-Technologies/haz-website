@@ -3,6 +3,7 @@ export const siteConfig = {
   tagline: "Mediterranean dining in the heart of London",
   description:
     "Haz is a Mediterranean restaurant group in London. Shared plates, vibrant cocktails and a grill that is always on.",
+  email: "info@hazrestaurant.co.uk",
   instagramHandle: "@hazrestaurantofficial",
   instagramUrl: "https://www.instagram.com/hazrestaurantofficial/",
   social: [

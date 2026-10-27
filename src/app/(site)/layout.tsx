@@ -7,15 +7,15 @@ import "./globals.css";
 
 const display = localFont({
   src: [
-    { path: "../../public/fonts/F37Caslon-Regular.woff2", weight: "400" },
-    { path: "../../public/fonts/F37Caslon-Bold.woff2", weight: "700" },
+    { path: "../../../public/fonts/F37Caslon-Regular.woff2", weight: "400" },
+    { path: "../../../public/fonts/F37Caslon-Bold.woff2", weight: "700" },
   ],
   variable: "--font-display",
   display: "swap",
 });
 
 const sans = localFont({
-  src: "../../public/fonts/AHAMONO-Regular.otf",
+  src: "../../../public/fonts/AHAMONO-Regular.otf",
   variable: "--font-sans",
   display: "swap",
 });

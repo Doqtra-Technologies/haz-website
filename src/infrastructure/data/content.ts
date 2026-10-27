@@ -39,7 +39,7 @@ export const siteContent: SiteContent = {
       "HAZ has been part of London's restaurant landscape for more than 20 years. Its next chapter can be its most confidently Turkish yet.",
     ],
     principles: ["generous food", "warm hospitality", "good ingredients", "the pleasure of eating together"],
-    image: imageSlot("HAZ restaurant story", "/images/haz-story-intro.webp"),
+    image: imageSlot("HAZ restaurant story", "/images/haz-our-story.webp"),
   },
   journey: [
     {

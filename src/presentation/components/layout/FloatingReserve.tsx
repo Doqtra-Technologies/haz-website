@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 /** Sticky "Reserve now" button used on menu and what's-on pages. */
-export function FloatingReserve({ tone = "ember" }: { tone?: "ember" | "gold" }) {
-  const colour =
-    tone === "gold" ? "bg-gold hover:bg-gold-dark text-ink" : "bg-ember hover:bg-ember-dark text-white";
+export function FloatingReserve(_props: { tone?: "ember" | "gold" }) {
+  // Cream with dark text stays visible on both the red sections and the dark photo heroes.
+  const colour = "bg-cream text-ink ring-1 ring-ink/20 hover:bg-white";
   return (
     <Link
       href="/book"

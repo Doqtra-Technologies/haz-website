@@ -21,6 +21,13 @@ export function LocationHero({ location }: { location: Location }) {
               {location.phone}
             </a>
           </p>
+          {location.email && (
+            <p>
+              <a href={`mailto:${location.email}`} className="hover:text-ember">
+                {location.email}
+              </a>
+            </p>
+          )}
         </address>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <a
@@ -79,6 +86,14 @@ export function LocationInfo({ location }: { location: Location }) {
               >
                 {location.phone}
               </a>
+              {location.email && (
+                <>
+                  <br />
+                  <a href={`mailto:${location.email}`} className="underline underline-offset-2 hover:text-ember">
+                    {location.email}
+                  </a>
+                </>
+              )}
             </address>
             <div className="mt-6 flex flex-col gap-3 sm:max-w-xs">
               <a

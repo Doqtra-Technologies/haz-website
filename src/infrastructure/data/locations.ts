@@ -5,22 +5,22 @@ const highlights = (slug: string): MenuHighlight[] => [
   {
     name: "Begendi Kebab",
     description: "Grilled lamb loin with fire roasted aubergine sauce",
-    image: imageSlot(`${slug} highlight: Begendi Kebab`, "/images/begendi-kebab.jpg"),
+    image: imageSlot(`${slug} highlight: Begendi Kebab`, "/images/begendi-kebab.webp"),
   },
   {
     name: "Burrata",
     description: "Heritage tomatoes, basil leaves and olive oil",
-    image: imageSlot(`${slug} highlight: Burrata`, "/images/burrata.jpg"),
+    image: imageSlot(`${slug} highlight: Burrata`, "/images/burrata.webp"),
   },
   {
     name: "Smoked Salmon",
     description: "Cucumber, tartar sauce, dill and salmon roe",
-    image: imageSlot(`${slug} highlight: Smoked Salmon`, "/images/smoked-salmon.jpg"),
+    image: imageSlot(`${slug} highlight: Smoked Salmon`, "/images/smoked-salmon.webp"),
   },
   {
     name: "Black Angus Sirloin",
     description: "Australian Black Angus, peppercorn sauce, sautéed spiced potatoes",
-    image: imageSlot(`${slug} highlight: Black Angus Sirloin`, "/images/black-angus-sirloin.jpg"),
+    image: imageSlot(`${slug} highlight: Black Angus Sirloin`, "/images/black-angus-sirloin.webp"),
   },
 ];
 
@@ -68,6 +68,7 @@ export const locations: Location[] = [
     shortName: "Premier Place",
     region: "London",
     phone: "020 7929 7923",
+    email: "md.israfil@hazrestaurant.co.uk",
     address: "9 Cutler St, London, E1 7DJ",
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=Haz+Premier+Place+9+Cutler+St+London+E1+7DJ",
@@ -98,6 +99,7 @@ export const locations: Location[] = [
     shortName: "Plantation Place",
     region: "London",
     phone: "020 7929 3173",
+    email: "anil@hazrestaurant.co.uk",
     address: "6 Mincing Lane, London, EC3M 3BD",
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=Haz+Plantation+Place+6+Mincing+Lane+London+EC3M+3BD",
@@ -125,6 +127,7 @@ export const locations: Location[] = [
     shortName: "Bishopsgate",
     region: "London",
     phone: "020 3343 9717",
+    email: "rozerin@hazrestaurant.co.uk",
     address: "64 Bishopsgate, London, EC2N 4AW",
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=Haz+Bishopsgate+64+Bishopsgate+London+EC2N+4AW",
@@ -156,9 +159,10 @@ export const locations: Location[] = [
     shortName: "St Paul’s",
     region: "London",
     phone: "020 7600 4172",
+    email: "armonas@hazrestaurant.co.uk",
     address: "34 Foster Ln, London, EC2V 6HD",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Haz+St+Pauls+34+Foster+Ln+London+EC2V+6HD",
-    cardImage: imageSlot("St Paul's restaurant", "/images/haz-location-st-pauls-1.webp"),
+    cardImage: imageSlot("St Paul's restaurant", "/images/haz-st-pauls-cover.webp"),
     heroImage: imageSlot("St Paul's restaurant", "/images/haz-location-st-pauls-1.webp"),
     interiorImage: imageSlot("St Paul's restaurant interior", "/images/haz-location-st-pauls-2.webp"),
     headline: "HAZ St Paul’s",
@@ -182,6 +186,7 @@ export const locations: Location[] = [
     shortName: "Finsbury Square",
     region: "London",
     phone: "020 7920 9944",
+    email: "kenan@hazrestaurant.co.uk",
     address: "The Alphabeta Building, 14 Finsbury Square, London, EC2A 1AH",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Haz+Finsbury+Square+The+Alphabeta+Building+14+Finsbury+Square+London+EC2A+1AH",
     cardImage: imageSlot("Finsbury Square restaurant", "/images/haz-location-finsbury-1.webp"),

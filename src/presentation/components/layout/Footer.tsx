@@ -52,6 +52,13 @@ export function Footer() {
           <NewsletterForm />
         </div>
 
+        <div className="border-t border-white/10 py-6 text-sm text-white/80">
+          <span className={label}>Email</span>{" "}
+          <a href={`mailto:${siteConfig.email}`} className="ml-2 transition-colors hover:text-white">
+            {siteConfig.email}
+          </a>
+        </div>
+
         <p className="border-t border-white/10 py-6 text-xs text-white/40">
           © {new Date().getFullYear()} Haz. All rights reserved.
         </p>

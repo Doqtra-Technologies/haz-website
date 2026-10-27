@@ -19,13 +19,22 @@ import {
   InMemoryLocationRepository,
   InMemoryMenuRepository,
 } from "./repositories/in-memory-repositories";
+import {
+  SanityBlogRepository,
+  SanityContentRepository,
+  SanityEventRepository,
+  SanityLocationRepository,
+  SanityMenuRepository,
+} from "./sanity/sanity-repositories";
+import { isSanityEnabled } from "@/sanity/env";
 
 // Composition root: the only place that knows concrete implementations.
-const locationRepository = new InMemoryLocationRepository();
-const menuRepository = new InMemoryMenuRepository();
-const eventRepository = new InMemoryEventRepository();
-const blogRepository = new InMemoryBlogRepository();
-const contentRepository = new InMemoryContentRepository();
+// Content comes from Sanity when CONTENT_SOURCE=sanity, otherwise from the bundled data.
+const locationRepository = isSanityEnabled ? new SanityLocationRepository() : new InMemoryLocationRepository();
+const menuRepository = isSanityEnabled ? new SanityMenuRepository() : new InMemoryMenuRepository();
+const eventRepository = isSanityEnabled ? new SanityEventRepository() : new InMemoryEventRepository();
+const blogRepository = isSanityEnabled ? new SanityBlogRepository() : new InMemoryBlogRepository();
+const contentRepository = isSanityEnabled ? new SanityContentRepository() : new InMemoryContentRepository();
 
 const enquiryGateway = new ConsoleEnquiryGateway();
 const newsletterGateway = new ConsoleNewsletterGateway();

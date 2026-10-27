@@ -5,7 +5,7 @@ import { imageSlot } from "@/core/domain/entities/image";
 import type { MenuCategory } from "@/core/domain/entities/menu";
 import { Photo } from "../ui/Photo";
 
-const heroImage = imageSlot("Menu hero: table of Mediterranean dishes", "/images/photo-28.jpg");
+const heroImage = imageSlot("Menu hero: table of Mediterranean dishes", "/images/haz-menu-hero.webp");
 
 interface Props {
   menus: MenuCategory[];
@@ -75,7 +75,7 @@ export function MenuExplorer({ menus, restaurants }: Props) {
                 onClick={() => setActive(m.slug)}
                 className={`border px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] transition-colors ${
                   m.slug === active
-                    ? "border-ember text-ember"
+                    ? "border-ink bg-ink text-white"
                     : "border-white/30 text-white/80 hover:border-white"
                 }`}
               >

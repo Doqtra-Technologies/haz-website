@@ -12,10 +12,10 @@ export function JourneyCarousel({ steps }: { steps: JourneyStep[] }) {
           {steps.map((s) => (
             <article
               key={s.title}
-              className="w-[82%] shrink-0 snap-start sm:w-[46%] lg:w-[32%]"
+              className="w-[88%] shrink-0 snap-start sm:w-[60%] lg:w-[45%]"
             >
-              <div className="relative aspect-[4/5]">
-                <Photo slot={s.image} sizes="(min-width: 1024px) 32vw, 82vw" />
+              <div className="relative aspect-[3/2]">
+                <Photo slot={s.image} sizes="(min-width: 1024px) 45vw, 88vw" />
               </div>
               <p className="mt-5 text-[11px] font-semibold tracking-[0.2em] text-white/60">
                 {s.year}

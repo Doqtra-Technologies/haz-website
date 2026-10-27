@@ -1,0 +1,60 @@
+import { defineField, defineType } from "sanity";
+import { imageField, orderField, paragraphsField, slugField } from "./fields";
+
+export const event = defineType({
+  name: "event",
+  title: "What's On event",
+  type: "document",
+  fields: [
+    defineField({ name: "title", title: "Title", type: "string", validation: (r) => r.required() }),
+    slugField("title"),
+    defineField({
+      name: "categoryLabel",
+      title: "Category",
+      type: "string",
+      description: "Used for the filter buttons on the What's On page, e.g. Festive, Menus, Events.",
+      initialValue: "Events",
+      validation: (r) => r.required(),
+    }),
+    defineField({ name: "summary", title: "Short summary", type: "text", rows: 2, description: "Shown on the event card and under the page title." }),
+    imageField("image", "Card photo", "Shown on the What's On list."),
+    defineField({
+      name: "imageFit",
+      title: "Card photo fit",
+      type: "string",
+      description: "Use 'Show whole image' for posters so nothing gets cropped.",
+      options: { list: [{ title: "Fill the card (crops)", value: "cover" }, { title: "Show whole image", value: "contain" }], layout: "radio" },
+      initialValue: "cover",
+    }),
+    imageField("bannerImage", "Banner photo", "Wide photo at the top of the event page."),
+    imageField("detailImage", "Main photo", "Normal photo shown beside the text on the event page."),
+    defineField({
+      name: "detailImageFit",
+      title: "Main photo fit",
+      type: "string",
+      options: { list: [{ title: "Fill the frame (crops)", value: "cover" }, { title: "Show whole image", value: "contain" }], layout: "radio" },
+      initialValue: "cover",
+    }),
+    paragraphsField("body", "Event text"),
+    defineField({
+      name: "dates",
+      title: "Venue / date lines",
+      type: "array",
+      description: "Short lines listed under the text, e.g. '📅 31 October | 9 PM'.",
+      of: [{ type: "string" }],
+    }),
+    defineField({ name: "venue", title: "Venue (optional)", type: "string" }),
+    defineField({ name: "schedule", title: "Schedule (optional)", type: "string", description: "e.g. Every Friday" }),
+    defineField({ name: "recurring", title: "Recurring event", type: "boolean", initialValue: false }),
+    defineField({ name: "ctaLabel", title: "Button text (optional)", type: "string", description: "e.g. Buy tickets. Leave empty for 'Reserve now'." }),
+    defineField({ name: "ctaUrl", title: "Button link (optional)", type: "string", description: "Full web address or a page such as /book. Leave empty to link to booking." }),
+    defineField({
+      name: "endsAt",
+      title: "Event ends at (optional)",
+      type: "datetime",
+      description: "After this moment the event is marked as past and the button is hidden.",
+    }),
+    orderField("Lower numbers appear first. Leave empty to show new events first."),
+  ],
+  preview: { select: { title: "title", subtitle: "categoryLabel", media: "image" } },
+});

@@ -45,6 +45,7 @@ export function Photo({
         alt={slot.label}
         fill
         sizes={sizes}
+        quality={92}
         priority={priority}
         onError={() => setFailed(true)}
         className={`object-cover ${className}`}

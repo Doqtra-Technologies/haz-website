@@ -7,12 +7,19 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "import-assets": "node scripts/import-assets.mjs"
+    "import-assets": "node scripts/import-assets.mjs",
+    "seed:sanity": "tsx --env-file=.env.local scripts/seed-sanity.ts"
   },
   "dependencies": {
+    "@portabletext/sanity-bridge": "1.2.14",
+    "@sanity/image-url": "^1.2.0",
+    "@sanity/vision": "^4.22.1",
     "next": "^15.1.0",
+    "next-sanity": "^11.6.13",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "sanity": "^4.22.1",
+    "styled-components": "^6"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
@@ -21,6 +28,7 @@
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
+    "tsx": "^4.23.15",
     "typescript": "^5.7.0"
   }
 }

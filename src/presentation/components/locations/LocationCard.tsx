@@ -28,6 +28,14 @@ export function LocationCard({ location }: { location: Location }) {
             <span className="text-brick" aria-hidden>☎</span>
             {location.phone}
           </li>
+          {location.email && (
+            <li className="flex items-center gap-2">
+              <span className="text-brick" aria-hidden>✉</span>
+              <a href={`mailto:${location.email}`} className="break-all underline-offset-2 hover:underline">
+                {location.email}
+              </a>
+            </li>
+          )}
           <li className="flex items-start gap-2">
             <span className="text-brick" aria-hidden>⌖</span>
             {location.address}

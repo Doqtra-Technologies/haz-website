@@ -78,3 +78,20 @@ Content now real: A La Carte menu (prices paired in order from a scrambled PDF; 
 Still to wire: F37 Caslon / AHAMONO fonts (self-host via @font-face), other menu PDFs, other blog posts.
 
 Menus: A La Carte, Set Lunch, Pre-Theatre and Christmas now come from the Drive PDFs. Fonts: `import-assets` also copies F37 Caslon (if the .otf files are in the folder) to `public/fonts`; otherwise Cormorant Garamond is used.
+
+## Sanity CMS
+
+Content (locations, menus, events, blog, site content) can be edited at `/studio`.
+The site uses bundled content until `CONTENT_SOURCE=sanity` is set, and falls back to it if Sanity is unreachable.
+
+### One-time setup
+1. Create a project at sanity.io/manage (dataset `production`).
+2. In the project's API > CORS origins, add the production domain, the `*.vercel.app` URL and `http://localhost:3000` (allow credentials).
+3. Create an Editor token (API > Tokens) and copy `.env.example` to `.env.local` with the values.
+4. Run `pnpm seed:sanity` (`--dry` to preview, `--force` to overwrite existing documents).
+5. In Vercel, set `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, `CONTENT_SOURCE=sanity` and `SANITY_REVALIDATE_SECRET`, then redeploy.
+6. In Sanity, add a webhook to `https://<domain>/api/revalidate` (POST, the same secret, projection `{_type}`) for instant updates. Without it, changes appear within about 60 seconds.
+7. Invite the client under Members, then they sign in at `/studio`.
+
+### Editing
+Change content, press **Publish**. Use the *Display order* field to control ordering. Navigation, social links, booking URLs and page hero text still live in code.
