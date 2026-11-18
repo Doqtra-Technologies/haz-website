@@ -218,7 +218,7 @@ export const locations: Location[] = [
     groupDining: {
       description:
         "HAZ Finsbury Square offers a vibrant setting for bringing people together. From its standout bar to the elegant dining space beyond, it’s ideal for group dinners, corporate gatherings and special celebrations. Gather around the table and enjoy Mediterranean flavours in the heart of Finsbury Square.",
-      gallery: [finsburyCover, ...finsburyInterior],
+      gallery: finsburyInterior,
     },
   },
 ];
