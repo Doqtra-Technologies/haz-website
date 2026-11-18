@@ -39,7 +39,6 @@ const GROUP_DINING_IMAGES: Record<string, string[]> = {
     "/images/haz-group-st-pauls-3.webp",
     "/images/haz-group-st-pauls-4.webp",
   ],
-  "finsbury-square": ["/images/haz-group-finsbury-1.webp", "/images/haz-group-finsbury-2.webp"],
 };
 
 const gallery = (slug: string) =>
@@ -219,7 +218,7 @@ export const locations: Location[] = [
     groupDining: {
       description:
         "HAZ Finsbury Square offers a vibrant setting for bringing people together. From its standout bar to the elegant dining space beyond, it’s ideal for group dinners, corporate gatherings and special celebrations. Gather around the table and enjoy Mediterranean flavours in the heart of Finsbury Square.",
-      gallery: groupGallery("finsbury-square"),
+      gallery: [finsburyCover, ...finsburyInterior],
     },
   },
 ];
