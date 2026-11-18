@@ -30,7 +30,7 @@ export const location = defineType({
     slugField("name"),
     defineField({ name: "region", title: "Region", type: "string", initialValue: "London" }),
     defineField({ name: "phone", title: "Phone number", type: "string" }),
-    defineField({ name: "email", title: "Business email", type: "string", description: "Shown on the location card and page." }),
+    defineField({ name: "email", title: "Business email", type: "string", description: "Location contact address, e.g. finsburysquare@hazrestaurant.co.uk. Shown on the location card, location page and group dining page." }),
     defineField({ name: "address", title: "Address", type: "string" }),
     defineField({ name: "mapUrl", title: "Google Maps link", type: "url" }),
     imageField("cardImage", "Card photo", "Shown on the locations list and the home page."),

@@ -78,6 +78,14 @@ export default async function GroupDiningVenuePage({ params }: { params: Promise
               <h2 className="mt-6 text-3xl font-light leading-snug text-white sm:text-4xl">
                 Send us a message today to make your group booking
               </h2>
+              {location.email && (
+                <p className="mt-6 text-sm text-white">
+                  Or email {location.shortName} directly at{" "}
+                  <a href={`mailto:${location.email}`} className="break-all underline underline-offset-4 hover:no-underline">
+                    {location.email}
+                  </a>
+                </p>
+              )}
             </div>
             <div className="lg:col-span-8">
               <EnquiryForm locationSlug={location.slug} />
