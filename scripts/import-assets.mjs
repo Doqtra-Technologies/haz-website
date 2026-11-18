@@ -18,7 +18,6 @@ const all = [];
 mkdirSync("public/images", { recursive: true });
 const find = (re) => all.find((p) => re.test(p.replace(/\\/g, "/")));
 const jobs = [
-  [/Haz_Wordmark-0?1\.png$/i, "public/logo.png"],
   [/Nic Crilly-Hargrave-14[^/]*\.jpg$/i, "public/images/photo-14.jpg"],
   [/Nic Crilly-Hargrave-20[^/]*\.jpg$/i, "public/images/photo-20.jpg"],
   [/Nic Crilly-Hargrave-19[^/]*\.jpg$/i, "public/images/photo-19.jpg"],

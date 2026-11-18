@@ -20,12 +20,12 @@ export function EventBrowser({ events }: { events: EventItem[] }) {
   const chip = (active: boolean) =>
     `border px-4 py-2 text-[10px] uppercase tracking-[0.2em] transition-colors ${
       active
-        ? "border-[#2a1f19] bg-[#2a1f19] text-white"
-        : "border-[#2a1f19]/30 text-[#2a1f19]/80 hover:border-[#2a1f19]"
+        ? "border-haz-espresso bg-haz-espresso text-white"
+        : "border-haz-espresso/30 text-haz-espresso/80 hover:border-haz-espresso"
     }`;
 
   return (
-    <section className="bg-sand py-12 text-ink sm:py-16">
+    <section className="bg-haz-oat py-12 text-haz-espresso sm:py-16">
       <Container>
         <div className="flex flex-wrap gap-2">
           <button type="button" className={chip(filter === "all")} onClick={() => setFilter("all")}>
@@ -43,7 +43,7 @@ export function EventBrowser({ events }: { events: EventItem[] }) {
             <Link
               key={ev.slug}
               href={`/whats-on/${ev.slug}`}
-              className="group block border border-ink/15 bg-[#efe8dc] transition-shadow hover:shadow-lg"
+              className="group block border border-haz-espresso/15 bg-white transition-shadow hover:shadow-lg"
             >
               <div className="relative aspect-square overflow-hidden">
                 <Photo
@@ -54,16 +54,16 @@ export function EventBrowser({ events }: { events: EventItem[] }) {
                 />
               </div>
               <div className="min-h-32 p-5">
-                <div className="flex flex-wrap items-center gap-2 text-[9px] uppercase tracking-[0.2em] text-gold-dark">
-                  {ev.isPast && <span className="border border-ink/30 px-1.5 py-0.5">Past event</span>}
+                <div className="flex flex-wrap items-center gap-2 text-[9px] uppercase tracking-[0.2em] text-haz-terracotta">
+                  {ev.isPast && <span className="border border-haz-espresso/30 px-1.5 py-0.5">Past event</span>}
                   {ev.schedule && <span>{ev.schedule}</span>}
-                  {ev.recurring && <span className="border border-gold/60 px-1.5 py-0.5">Recurring</span>}
-                  <span className="border border-gold/60 px-1.5 py-0.5">{ev.categoryLabel}</span>
+                  {ev.recurring && <span className="border border-haz-coral/60 px-1.5 py-0.5">Recurring</span>}
+                  <span className="border border-haz-coral/60 px-1.5 py-0.5">{ev.categoryLabel}</span>
                 </div>
                 <h3 className="mt-3 text-lg font-medium">{ev.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink/70">{ev.summary}</p>
+                <p className="mt-2 text-sm leading-relaxed text-haz-espresso/70">{ev.summary}</p>
                 {ev.venue && (
-                  <p className="mt-2 text-[10px] uppercase tracking-[0.2em] text-ink/50">{ev.venue}</p>
+                  <p className="mt-2 text-[10px] uppercase tracking-[0.2em] text-haz-espresso/50">{ev.venue}</p>
                 )}
               </div>
             </Link>

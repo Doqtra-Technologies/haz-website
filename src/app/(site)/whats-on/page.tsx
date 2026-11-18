@@ -26,7 +26,7 @@ export default async function WhatsOnPage() {
         image={imageSlot("What's On at HAZ", "/images/haz-whats-on-hero.webp")}
       />
       <EventBrowser events={events} />
-      <FloatingReserve tone="gold" />
+      <FloatingReserve />
     </>
   );
 }

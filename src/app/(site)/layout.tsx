@@ -5,37 +5,39 @@ import { Footer } from "@/presentation/components/layout/Footer";
 import { Header } from "@/presentation/components/layout/Header";
 import "./globals.css";
 
-const display = localFont({
-  src: [
-    { path: "../../../public/fonts/F37Caslon-Regular.woff2", weight: "400" },
-    { path: "../../../public/fonts/F37Caslon-Bold.woff2", weight: "700" },
-  ],
-  variable: "--font-display",
+const heading = localFont({
+  src: "../fonts/Clever-Medium.otf",
+  weight: "500",
+  variable: "--font-heading",
   display: "swap",
 });
 
-const sans = localFont({
-  src: "../../../public/fonts/AHAMONO-Regular.otf",
-  variable: "--font-sans",
+const body = localFont({
+  src: [
+    { path: "../fonts/Documan-Light.woff2", weight: "300" },
+    { path: "../fonts/Documan-Medium.woff2", weight: "500" },
+  ],
+  variable: "--font-body",
   display: "swap",
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: `${siteConfig.name} | ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
+  openGraph: {
+    siteName: siteConfig.name,
+    locale: "en_GB",
+    type: "website",
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={`${display.variable} ${sans.variable}`}>
+    <html lang="en-GB" className={`${heading.variable} ${body.variable}`}>
       <body>
         <Header />
         <main>{children}</main>

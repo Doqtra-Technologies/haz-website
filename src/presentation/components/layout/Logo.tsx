@@ -1,27 +1,39 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 
-/** Uses the supplied HAZ mark, with a text fallback if the asset is unavailable. */
+// Master artwork from the brand pack. Oat ("light") is for dark, coral and terracotta
+// backgrounds; Espresso for oat and porcelain.
+const artwork = {
+  logotype: { light: "/brand/haz-logo-light.svg", dark: "/brand/haz-logo.svg", width: 1897, height: 634 },
+  lockup: { light: "/brand/haz-lockup-light.svg", dark: "/brand/haz-lockup.svg", width: 1897, height: 883 },
+} as const;
+
+interface LogoProps {
+  /** The "bar&restaurant" lock-up must render at least 90px tall (guidelines p.24). */
+  variant?: keyof typeof artwork;
+  tone?: "light" | "dark";
+  className?: string;
+  priority?: boolean;
+}
+
+export function LogoImage({ variant = "logotype", tone = "light", className = "", priority = false }: LogoProps) {
+  const art = artwork[variant];
+  return (
+    <Image
+      src={art[tone]}
+      alt="HAZ"
+      width={art.width}
+      height={art.height}
+      priority={priority}
+      className={`w-auto ${className}`}
+    />
+  );
+}
+
 export function Logo({ className = "" }: { className?: string }) {
-  const [failed, setFailed] = useState(false);
   return (
     <Link href="/" aria-label="Haz home" className={`block ${className}`}>
-      {failed ? (
-        <span className="font-display text-3xl font-light tracking-[0.2em] text-white">HAZ</span>
-      ) : (
-        <Image
-          src="/logo.png"
-          alt="HAZ"
-          width={155}
-          height={135}
-          priority
-          onError={() => setFailed(true)}
-          className="h-12 w-auto brightness-0 invert"
-        />
-      )}
+      <LogoImage priority className="h-8 sm:h-9" />
     </Link>
   );
 }

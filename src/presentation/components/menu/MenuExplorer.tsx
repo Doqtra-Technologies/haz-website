@@ -19,21 +19,21 @@ export function MenuExplorer({ menus, restaurants }: Props) {
 
   return (
     <>
-      <section className="relative flex min-h-[75vh] items-end overflow-hidden bg-navy-950 pt-28">
+      <section className="relative flex min-h-[75vh] items-end overflow-hidden bg-haz-espresso pt-28">
         <Photo slot={heroImage} priority sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/10" />
         <div className="relative mx-auto w-full max-w-7xl px-5 pb-14 sm:px-8 lg:px-12">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-ember">Food &amp; Drink</p>
-          <h1 className="mt-4 font-display text-5xl font-light uppercase text-white sm:text-6xl lg:text-7xl">
+          <p className="text-[11px] uppercase tracking-[0.3em] text-haz-coral">Food &amp; Drink</p>
+          <h1 className="mt-4 font-heading text-5xl font-light uppercase text-white sm:text-6xl lg:text-7xl">
             {menu.label}
           </h1>
-          <div className="mt-5 h-px w-14 bg-ember" />
-          <p className="mt-6 max-w-md font-display text-lg leading-relaxed text-white/90">
+          <div className="mt-5 h-px w-14 bg-haz-coral" />
+          <p className="mt-6 max-w-md font-heading text-lg leading-relaxed text-white/90">
             {menu.intro}
           </p>
           <p className="mt-4 max-w-md text-sm text-white/80">
             Menus vary by location.{" "}
-            <a href="#menu-select" className="text-ember underline underline-offset-2">
+            <a href="#menu-select" className="text-haz-coral underline underline-offset-2">
               Select your location
             </a>{" "}
             to see the full, up to date menu.
@@ -41,10 +41,10 @@ export function MenuExplorer({ menus, restaurants }: Props) {
         </div>
       </section>
 
-      <section id="menu-select" className="scroll-mt-24 bg-navy-900 py-10">
+      <section id="menu-select" className="scroll-mt-24 bg-haz-terracotta py-10">
         <div className="mx-auto max-w-4xl px-5 text-center">
-          <div className="mx-auto flex max-w-lg items-center gap-3 bg-navy-700/70 px-4 py-3 text-left text-sm">
-            <label htmlFor="restaurant" className="whitespace-nowrap text-xs text-white/70">
+          <div className="mx-auto flex max-w-lg items-center gap-3 bg-haz-espresso/30 px-4 py-3 text-left text-sm">
+            <label htmlFor="restaurant" className="whitespace-nowrap text-xs text-white">
               Viewing menus for:
             </label>
             <select
@@ -53,15 +53,15 @@ export function MenuExplorer({ menus, restaurants }: Props) {
               onChange={(e) => setRestaurant(e.target.value)}
               className="w-full bg-transparent text-white focus:outline-none"
             >
-              <option value="" className="text-ink">Select a restaurant</option>
+              <option value="" className="text-haz-espresso">Select a restaurant</option>
               {restaurants.map((r) => (
-                <option key={r.slug} value={r.slug} className="text-ink">
+                <option key={r.slug} value={r.slug} className="text-haz-espresso">
                   {r.name}
                 </option>
               ))}
             </select>
           </div>
-          <p className="mt-3 text-[11px] text-white/60">
+          <p className="mt-3 text-[11px] text-white">
             Select a restaurant to see all menus available at that location.
           </p>
 
@@ -75,8 +75,8 @@ export function MenuExplorer({ menus, restaurants }: Props) {
                 onClick={() => setActive(m.slug)}
                 className={`border px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] transition-colors ${
                   m.slug === active
-                    ? "border-ink bg-ink text-white"
-                    : "border-white/30 text-white/80 hover:border-white"
+                    ? "border-haz-espresso bg-haz-espresso text-white"
+                    : "border-white/30 text-white hover:border-white"
                 }`}
               >
                 {m.label}
@@ -86,17 +86,17 @@ export function MenuExplorer({ menus, restaurants }: Props) {
         </div>
       </section>
 
-      <section id="allergens" className="bg-navy-950 py-16">
+      <section id="allergens" className="bg-haz-espresso py-16">
         <div className="mx-auto max-w-3xl px-5">
           {restaurant ? (
             <ul className="divide-y divide-white/10">
               {menu.items.map((item) => (
                 <li key={item.name} className="flex items-start justify-between gap-6 py-5">
                   <div>
-                    <h3 className="font-display text-2xl text-white">{item.name}</h3>
+                    <h3 className="font-heading text-2xl text-white">{item.name}</h3>
                     <p className="mt-1 text-sm text-white/60">{item.description}</p>
                   </div>
-                  <span className="whitespace-nowrap text-sm text-ember">{item.price}</span>
+                  <span className="whitespace-nowrap text-sm text-haz-coral">{item.price}</span>
                 </li>
               ))}
             </ul>
@@ -105,7 +105,7 @@ export function MenuExplorer({ menus, restaurants }: Props) {
               Choose a restaurant above to view the {menu.label.toLowerCase()} menu.
             </p>
           )}
-          <p className="mt-10 text-center text-xs text-white/40">
+          <p className="mt-10 text-center text-xs text-white/60">
             For information relating to allergens, please speak to a member of our team.
           </p>
         </div>

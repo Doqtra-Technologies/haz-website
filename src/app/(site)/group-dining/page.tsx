@@ -15,19 +15,19 @@ export default async function GroupDiningPage() {
 
   return (
     <>
-      <section className="bg-navy-950">
+      <section className="bg-haz-espresso">
         <div className="relative flex min-h-[70vh] items-end overflow-hidden pt-28">
           <Photo slot={hero} priority sizes="100vw" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
           <Container className="relative pb-8">
-            <h1 className="font-display text-6xl font-light text-white sm:text-8xl">
+            <h1 className="font-heading text-6xl font-light text-white sm:text-8xl">
               Group dining
             </h1>
           </Container>
         </div>
-        <div className="bg-navy-900">
+        <div className="bg-haz-terracotta">
           <Container className="flex flex-col gap-6 py-8 md:flex-row md:items-center md:justify-between">
-            <p className="max-w-3xl text-sm leading-relaxed text-white/80">
+            <p className="max-w-3xl text-sm leading-relaxed text-white">
               Discover our inviting and versatile spaces, perfect for bringing
               people together. From business lunches and team dinners to family
               celebrations and special occasions, HAZ offers the ideal setting for
@@ -35,7 +35,7 @@ export default async function GroupDiningPage() {
             </p>
             <a
               href="#restaurants"
-              className="flex items-center gap-3 whitespace-nowrap border-white/20 text-[11px] uppercase tracking-[0.2em] text-white hover:text-ember md:border-l md:pl-8"
+              className="flex items-center gap-3 whitespace-nowrap border-white/20 text-[11px] uppercase tracking-[0.2em] text-white hover:text-haz-oat md:border-l md:pl-8"
             >
               Our restaurants <ArrowRight />
             </a>
@@ -43,10 +43,10 @@ export default async function GroupDiningPage() {
         </div>
       </section>
 
-      <section id="restaurants" className="scroll-mt-20 bg-navy-900 py-14 sm:py-20">
+      <section id="restaurants" className="scroll-mt-20 bg-haz-terracotta py-14 sm:py-20">
         <Container>
           <h2 className="eyebrow font-semibold text-white">Our restaurants</h2>
-          <div className="mt-2 h-px w-8 bg-ember" />
+          <div className="mt-2 h-px w-8 bg-haz-oat" />
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {locations.map((loc) => (
               <Link
@@ -61,12 +61,12 @@ export default async function GroupDiningPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent" />
                 <div className="absolute left-5 top-5">
-                  <p className="font-display text-3xl text-white">{loc.shortName}</p>
-                  <p className="mt-1 text-[10px] uppercase tracking-[0.25em] text-white/80">
+                  <p className="font-heading text-3xl text-white">{loc.shortName}</p>
+                  <p className="mt-1 text-[10px] uppercase tracking-[0.25em] text-white">
                     {loc.region}
                   </p>
                 </div>
-                <span className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full border border-white/70 text-white group-hover:bg-white group-hover:text-navy-900">
+                <span className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full border border-white/70 text-white group-hover:bg-white group-hover:text-haz-terracotta">
                   <ArrowRight />
                 </span>
               </Link>

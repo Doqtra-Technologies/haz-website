@@ -25,15 +25,15 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
   if (!post) notFound();
 
   return (
-    <article className="bg-navy-900 pb-20 pt-32">
+    <article className="bg-haz-espresso pb-20 pt-32">
       <Container className="max-w-3xl">
-        <Link href="/blog" className="text-[11px] uppercase tracking-[0.25em] text-gold hover:text-white">
+        <Link href="/blog" className="text-[11px] uppercase tracking-[0.25em] text-haz-coral hover:text-white">
           ← Blog
         </Link>
-        <p className="mt-8 text-[10px] uppercase tracking-[0.25em] text-ember">
+        <p className="mt-8 text-[10px] uppercase tracking-[0.25em] text-haz-coral">
           {post.category} · {formatDate(post.date)}
         </p>
-        <h1 className="mt-3 font-display text-4xl font-light text-white sm:text-5xl">
+        <h1 className="mt-3 font-heading text-4xl font-light text-white sm:text-5xl">
           {post.title}
         </h1>
         <div className="relative mt-8 aspect-[16/10]">

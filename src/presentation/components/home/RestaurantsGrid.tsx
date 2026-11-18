@@ -5,7 +5,7 @@ import { Photo } from "../ui/Photo";
 
 export function RestaurantsGrid({ locations }: { locations: Location[] }) {
   return (
-    <section className="bg-navy-900 py-16 sm:py-20">
+    <section className="bg-haz-terracotta py-16 sm:py-20">
       <Container>
         <h2 className="eyebrow font-semibold text-white">Our restaurants</h2>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -26,11 +26,11 @@ export function RestaurantsGrid({ locations }: { locations: Location[] }) {
                 <span className="border border-white/70 px-2 py-1 text-[9px] uppercase leading-tight tracking-[0.15em] text-white">
                   {loc.region}
                 </span>
-                <span className="font-display text-2xl leading-tight text-white">
+                <span className="font-heading text-2xl leading-tight text-white">
                   {loc.name}
                 </span>
               </div>
-              <span className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full border border-white/70 text-white transition-colors group-hover:bg-white group-hover:text-navy-900">
+              <span className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full border border-white/70 text-white transition-colors group-hover:bg-white group-hover:text-haz-terracotta">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden><path d="M4 12h16M14 6l6 6-6 6" /></svg>
               </span>
             </Link>

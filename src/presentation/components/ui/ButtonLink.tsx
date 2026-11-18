@@ -1,13 +1,12 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-type Variant = "primary" | "outline" | "gold" | "light";
+type Variant = "primary" | "outline" | "light";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-ember text-white hover:bg-ember-dark border border-ember",
-  outline: "border border-ember text-ember hover:bg-ember hover:text-white",
-  gold: "bg-gold text-ink hover:bg-gold-dark border border-gold",
-  light: "border border-white/60 text-white hover:bg-white hover:text-navy-900",
+  primary: "bg-haz-coral text-haz-espresso hover:bg-haz-oat border border-haz-coral",
+  outline: "border border-haz-coral text-haz-coral hover:bg-haz-coral hover:text-haz-espresso",
+  light: "border border-white/60 text-white hover:bg-white hover:text-haz-terracotta",
 };
 
 interface Props {

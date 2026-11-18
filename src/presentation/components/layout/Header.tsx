@@ -34,7 +34,7 @@ export function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        solid ? "bg-navy-950/95 backdrop-blur" : "bg-gradient-to-b from-black/60 to-transparent"
+        solid ? "bg-haz-espresso/95 backdrop-blur" : "bg-gradient-to-b from-black/60 to-transparent"
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12">
@@ -47,8 +47,8 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-[11px] uppercase tracking-[0.2em] transition-colors hover:text-ember ${
-                  active ? "text-ember" : "text-white/90"
+                className={`text-[11px] uppercase tracking-[0.2em] transition-colors hover:text-haz-coral ${
+                  active ? "text-haz-coral" : "text-white/90"
                 }`}
               >
                 {item.label}
@@ -57,7 +57,7 @@ export function Header() {
           })}
           <Link
             href="/book"
-            className="border border-ember px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-ember transition-colors hover:bg-ember hover:text-white"
+            className="border border-haz-coral px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-haz-coral transition-colors hover:bg-haz-coral hover:text-haz-espresso"
           >
             Reserve
           </Link>
@@ -79,20 +79,20 @@ export function Header() {
       {open && (
         <nav
           aria-label="Mobile"
-          className="flex h-[calc(100vh-5rem)] flex-col gap-1 overflow-y-auto bg-navy-950 px-5 pb-10 pt-6 lg:hidden"
+          className="flex h-[calc(100vh-5rem)] flex-col gap-1 overflow-y-auto bg-haz-espresso px-5 pb-10 pt-6 lg:hidden"
         >
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="border-b border-white/10 py-4 font-display text-2xl text-white"
+              className="border-b border-white/10 py-4 font-heading text-2xl text-white"
             >
               {item.label}
             </Link>
           ))}
           <Link
             href="/book"
-            className="mt-6 border border-ember py-4 text-center text-xs font-semibold uppercase tracking-[0.25em] text-ember"
+            className="mt-6 border border-haz-coral py-4 text-center text-xs font-semibold uppercase tracking-[0.25em] text-haz-coral"
           >
             Reserve a table
           </Link>

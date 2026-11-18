@@ -1,5 +1,6 @@
 export const siteConfig = {
   name: "HAZ",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://haz-website-red.vercel.app",
   tagline: "Mediterranean dining in the heart of London",
   description:
     "Haz is a Mediterranean restaurant group in London. Shared plates, vibrant cocktails and a grill that is always on.",
