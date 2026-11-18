@@ -47,7 +47,7 @@ export function Photo({
         priority={priority}
         onError={() => setFailed(true)}
         className={`object-cover ${className}`}
-        style={{ objectFit: fit }}
+        style={{ objectFit: fit, objectPosition: slot.position }}
       />
     );
   }

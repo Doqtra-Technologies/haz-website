@@ -56,6 +56,21 @@ const groupGallery = (slug: string) =>
     imageSlot(`${slug} group dining photo ${index + 1}`, src),
   );
 
+const FINSBURY = "/images/locations/finsbury-square";
+const finsburyCover = imageSlot(
+  "Haz Finsbury Square dining room with a long table under globe pendant lights",
+  `${FINSBURY}/cover-01.webp`,
+  "50% 60%",
+);
+// Wide shots first, then details.
+const finsburyInterior = [
+  imageSlot("Haz Finsbury Square dining room interior", `${FINSBURY}/interior-01.webp`, "30% 60%"),
+  imageSlot("Haz Finsbury Square dining room with copper pendant lights", `${FINSBURY}/interior-02.webp`, "35% 60%"),
+  imageSlot("Haz Finsbury Square banquette seating under globe pendants", `${FINSBURY}/interior-03.webp`, "50% 60%"),
+  imageSlot("Haz Finsbury Square bar and bar stools", `${FINSBURY}/interior-04.webp`, "60% 55%"),
+  imageSlot("Haz Finsbury Square leather booth set for dinner", `${FINSBURY}/interior-05.webp`, "50% 55%"),
+];
+
 const weekHours = [
   { days: "Sun – Thu", time: "11:30 – 23:00" },
   { days: "Fri – Sat", time: "11:30 – 00:00" },
@@ -189,9 +204,9 @@ export const locations: Location[] = [
     email: "finsburysquare@hazrestaurant.co.uk",
     address: "The Alphabeta Building, 14 Finsbury Square, London, EC2A 1AH",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Haz+Finsbury+Square+The+Alphabeta+Building+14+Finsbury+Square+London+EC2A+1AH",
-    cardImage: imageSlot("Finsbury Square restaurant", "/images/haz-location-finsbury-1.webp"),
-    heroImage: imageSlot("Finsbury Square restaurant", "/images/haz-location-finsbury-1.webp"),
-    interiorImage: imageSlot("Finsbury Square restaurant interior", "/images/haz-location-finsbury-2.webp"),
+    cardImage: finsburyCover,
+    heroImage: finsburyCover,
+    interiorImage: finsburyInterior[0],
     headline: "HAZ Finsbury Square",
     description: [
       "Our most recent HAZ is located on the stunning Finsbury Square, just a short walk from the tube station.",
@@ -200,7 +215,7 @@ export const locations: Location[] = [
     hours: weekHours,
     openingTimes: [{ days: "Monday – Sunday", time: "11.00am to 11.30pm" }],
     highlights: highlights("Finsbury Square"),
-    gallery: gallery("Finsbury Square"),
+    gallery: finsburyInterior,
     groupDining: {
       description:
         "HAZ Finsbury Square offers a vibrant setting for bringing people together. From its standout bar to the elegant dining space beyond, it’s ideal for group dinners, corporate gatherings and special celebrations. Gather around the table and enjoy Mediterranean flavours in the heart of Finsbury Square.",
