@@ -29,12 +29,12 @@ export default async function GroupDiningVenuePage({ params }: { params: Promise
 
   return (
     <>
-      <section className="bg-navy-950">
+      <section className="bg-haz-espresso">
         <div className="relative flex min-h-[65vh] items-end overflow-hidden pt-28">
           <Photo slot={location.heroImage} priority sizes="100vw" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10" />
           <Container className="relative pb-10">
-            <h1 className="font-display text-6xl font-light text-white sm:text-7xl">
+            <h1 className="font-heading text-6xl font-light text-white sm:text-7xl">
               {location.shortName}
             </h1>
             <p className="mt-2 text-sm uppercase tracking-[0.3em] text-white">
@@ -42,9 +42,9 @@ export default async function GroupDiningVenuePage({ params }: { params: Promise
             </p>
           </Container>
         </div>
-        <div className="bg-navy-800">
+        <div className="bg-haz-terracotta">
           <Container className="flex flex-col gap-6 py-10 md:flex-row md:items-center md:justify-between">
-            <p className="max-w-2xl text-sm leading-relaxed text-white/80">
+            <p className="max-w-2xl text-sm leading-relaxed text-white">
               {groupDining.description}
             </p>
             {groupDining.brochureUrl && (
@@ -56,7 +56,7 @@ export default async function GroupDiningVenuePage({ params }: { params: Promise
         </div>
       </section>
 
-      <section className="bg-navy-950 py-12">
+      <section className="bg-haz-espresso py-12">
         <Container>
           <Carousel label={`${location.shortName} photos`}>
             {groupDining.gallery.map((g) => (
@@ -68,7 +68,7 @@ export default async function GroupDiningVenuePage({ params }: { params: Promise
         </Container>
       </section>
 
-      <section id="enquiry" className="bg-navy-800 py-16 sm:py-20">
+      <section id="enquiry" className="bg-haz-terracotta py-16 sm:py-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -78,6 +78,14 @@ export default async function GroupDiningVenuePage({ params }: { params: Promise
               <h2 className="mt-6 text-3xl font-light leading-snug text-white sm:text-4xl">
                 Send us a message today to make your group booking
               </h2>
+              {location.email && (
+                <p className="mt-6 text-sm text-white">
+                  Or email {location.shortName} directly at{" "}
+                  <a href={`mailto:${location.email}`} className="break-all underline underline-offset-4 hover:no-underline">
+                    {location.email}
+                  </a>
+                </p>
+              )}
             </div>
             <div className="lg:col-span-8">
               <EnquiryForm locationSlug={location.slug} />

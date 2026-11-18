@@ -39,7 +39,6 @@ const GROUP_DINING_IMAGES: Record<string, string[]> = {
     "/images/haz-group-st-pauls-3.webp",
     "/images/haz-group-st-pauls-4.webp",
   ],
-  "finsbury-square": ["/images/haz-group-finsbury-1.webp", "/images/haz-group-finsbury-2.webp"],
 };
 
 const gallery = (slug: string) =>
@@ -56,6 +55,21 @@ const groupGallery = (slug: string) =>
     imageSlot(`${slug} group dining photo ${index + 1}`, src),
   );
 
+const FINSBURY = "/images/locations/finsbury-square";
+const finsburyCover = imageSlot(
+  "Haz Finsbury Square dining room with a long table under globe pendant lights",
+  `${FINSBURY}/cover-01.webp`,
+  "50% 60%",
+);
+// Wide shots first, then details.
+const finsburyInterior = [
+  imageSlot("Haz Finsbury Square dining room interior", `${FINSBURY}/interior-01.webp`, "30% 60%"),
+  imageSlot("Haz Finsbury Square dining room with copper pendant lights", `${FINSBURY}/interior-02.webp`, "35% 60%"),
+  imageSlot("Haz Finsbury Square banquette seating under globe pendants", `${FINSBURY}/interior-03.webp`, "50% 60%"),
+  imageSlot("Haz Finsbury Square bar and bar stools", `${FINSBURY}/interior-04.webp`, "60% 55%"),
+  imageSlot("Haz Finsbury Square leather booth set for dinner", `${FINSBURY}/interior-05.webp`, "50% 55%"),
+];
+
 const weekHours = [
   { days: "Sun – Thu", time: "11:30 – 23:00" },
   { days: "Fri – Sat", time: "11:30 – 00:00" },
@@ -68,7 +82,7 @@ export const locations: Location[] = [
     shortName: "Premier Place",
     region: "London",
     phone: "020 7929 7923",
-    email: "md.israfil@hazrestaurant.co.uk",
+    email: "premierplace@hazrestaurant.co.uk",
     address: "9 Cutler St, London, E1 7DJ",
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=Haz+Premier+Place+9+Cutler+St+London+E1+7DJ",
@@ -99,7 +113,7 @@ export const locations: Location[] = [
     shortName: "Plantation Place",
     region: "London",
     phone: "020 7929 3173",
-    email: "anil@hazrestaurant.co.uk",
+    email: "plantationplace@hazrestaurant.co.uk",
     address: "6 Mincing Lane, London, EC3M 3BD",
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=Haz+Plantation+Place+6+Mincing+Lane+London+EC3M+3BD",
@@ -127,7 +141,7 @@ export const locations: Location[] = [
     shortName: "Bishopsgate",
     region: "London",
     phone: "020 3343 9717",
-    email: "rozerin@hazrestaurant.co.uk",
+    email: "bishopsgate@hazrestaurant.co.uk",
     address: "64 Bishopsgate, London, EC2N 4AW",
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=Haz+Bishopsgate+64+Bishopsgate+London+EC2N+4AW",
@@ -159,7 +173,7 @@ export const locations: Location[] = [
     shortName: "St Paul’s",
     region: "London",
     phone: "020 7600 4172",
-    email: "armonas@hazrestaurant.co.uk",
+    email: "stpauls@hazrestaurant.co.uk",
     address: "34 Foster Ln, London, EC2V 6HD",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Haz+St+Pauls+34+Foster+Ln+London+EC2V+6HD",
     cardImage: imageSlot("St Paul's restaurant", "/images/haz-st-pauls-cover.webp"),
@@ -186,12 +200,12 @@ export const locations: Location[] = [
     shortName: "Finsbury Square",
     region: "London",
     phone: "020 7920 9944",
-    email: "kenan@hazrestaurant.co.uk",
+    email: "finsburysquare@hazrestaurant.co.uk",
     address: "The Alphabeta Building, 14 Finsbury Square, London, EC2A 1AH",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Haz+Finsbury+Square+The+Alphabeta+Building+14+Finsbury+Square+London+EC2A+1AH",
-    cardImage: imageSlot("Finsbury Square restaurant", "/images/haz-location-finsbury-1.webp"),
-    heroImage: imageSlot("Finsbury Square restaurant", "/images/haz-location-finsbury-1.webp"),
-    interiorImage: imageSlot("Finsbury Square restaurant interior", "/images/haz-location-finsbury-2.webp"),
+    cardImage: finsburyCover,
+    heroImage: finsburyCover,
+    interiorImage: finsburyInterior[0],
     headline: "HAZ Finsbury Square",
     description: [
       "Our most recent HAZ is located on the stunning Finsbury Square, just a short walk from the tube station.",
@@ -200,11 +214,11 @@ export const locations: Location[] = [
     hours: weekHours,
     openingTimes: [{ days: "Monday – Sunday", time: "11.00am to 11.30pm" }],
     highlights: highlights("Finsbury Square"),
-    gallery: gallery("Finsbury Square"),
+    gallery: finsburyInterior,
     groupDining: {
       description:
         "HAZ Finsbury Square offers a vibrant setting for bringing people together. From its standout bar to the elegant dining space beyond, it’s ideal for group dinners, corporate gatherings and special celebrations. Gather around the table and enjoy Mediterranean flavours in the heart of Finsbury Square.",
-      gallery: groupGallery("finsbury-square"),
+      gallery: finsburyInterior,
     },
   },
 ];

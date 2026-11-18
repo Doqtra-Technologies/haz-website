@@ -44,16 +44,16 @@ export function EnquiryForm({ locationSlug }: { locationSlug: string }) {
   }
 
   const err = (name: string) =>
-    errors[name] ? <span className="mt-1 block text-xs text-ember">{errors[name]}</span> : null;
+    errors[name] ? <span className="mt-1 block text-xs font-medium text-white">{errors[name]}</span> : null;
 
-  const label = "mb-1.5 block text-[11px] text-white/70";
+  const label = "mb-1.5 block text-[11px] text-white";
   const group = "text-[10px] font-semibold uppercase tracking-[0.25em] text-white";
 
   if (status === "done") {
     return (
-      <div className="bg-navy-700/40 p-10 text-center">
-        <h3 className="font-display text-3xl text-white">Thank you</h3>
-        <p className="mt-3 text-sm text-white/70">
+      <div className="bg-haz-espresso/30 p-10 text-center">
+        <h3 className="font-heading text-3xl text-white">Thank you</h3>
+        <p className="mt-3 text-sm text-white">
           We&apos;ve received your enquiry and a member of the team will be in touch shortly.
         </p>
       </div>
@@ -69,7 +69,7 @@ export function EnquiryForm({ locationSlug }: { locationSlug: string }) {
           <select id="bookingOption" name="bookingOption" defaultValue="" className="field">
             <option value="" disabled>Booking option</option>
             {BOOKING_OPTIONS.map((o) => (
-              <option key={o} value={o} className="text-ink">{o}</option>
+              <option key={o} value={o} className="text-haz-espresso">{o}</option>
             ))}
           </select>
           {err("bookingOption")}
@@ -93,7 +93,7 @@ export function EnquiryForm({ locationSlug }: { locationSlug: string }) {
             <label className={label} htmlFor="eventType">Type of event</label>
             <select id="eventType" name="eventType" defaultValue="On-Premise" className="field">
               {EVENT_TYPES.map((o) => (
-                <option key={o} value={o} className="text-ink">{o}</option>
+                <option key={o} value={o} className="text-haz-espresso">{o}</option>
               ))}
             </select>
           </div>
@@ -130,7 +130,7 @@ export function EnquiryForm({ locationSlug }: { locationSlug: string }) {
             onChange={(e) => setCount(e.target.value.length)}
             className="field resize-none"
           />
-          <span className="mt-1 block text-right text-[11px] text-white/40">{count}/300</span>
+          <span className="mt-1 block text-right text-[11px] text-white">{count}/300</span>
           {err("message")}
         </div>
       </fieldset>
@@ -139,12 +139,12 @@ export function EnquiryForm({ locationSlug }: { locationSlug: string }) {
         <button
           type="submit"
           disabled={status === "loading"}
-          className="bg-ember px-8 py-3.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white hover:bg-ember-dark disabled:opacity-50"
+          className="bg-haz-coral px-8 py-3.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-haz-espresso hover:bg-haz-oat disabled:opacity-50"
         >
           {status === "loading" ? "Sending…" : "Send enquiry"}
         </button>
         {status === "error" && Object.keys(errors).length === 0 && (
-          <p className="mt-3 text-sm text-ember">Something went wrong. Please try again.</p>
+          <p className="mt-3 text-sm font-medium text-white">Something went wrong. Please try again.</p>
         )}
       </div>
     </form>

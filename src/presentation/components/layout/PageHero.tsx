@@ -25,31 +25,31 @@ export function PageHero({
   children,
 }: Props) {
   return (
-    <section className="relative flex min-h-[70vh] items-end overflow-hidden bg-navy-950 pt-28">
+    <section className="relative flex min-h-[70vh] items-end overflow-hidden bg-haz-espresso pt-28">
       <Photo slot={image} priority sizes="100vw" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/30" />
       <div className="relative mx-auto w-full max-w-7xl px-5 pb-14 sm:px-8 lg:px-12">
         {backHref && (
           <Link
             href={backHref}
-            className="mb-8 inline-block text-[11px] uppercase tracking-[0.25em] text-gold hover:text-white"
+            className="mb-8 inline-block text-[11px] uppercase tracking-[0.25em] text-haz-coral hover:text-white"
           >
             ← {backLabel}
           </Link>
         )}
         {eyebrow && (
-          <p className="mb-4 text-[11px] uppercase tracking-[0.3em] text-gold">{eyebrow}</p>
+          <p className="mb-4 text-[11px] uppercase tracking-[0.3em] text-haz-coral">{eyebrow}</p>
         )}
         <h1
-          className={`font-display text-5xl font-light leading-[1.05] text-sand-light sm:text-6xl lg:text-7xl ${
+          className={`font-heading text-5xl font-light leading-[1.05] text-haz-porcelain sm:text-6xl lg:text-7xl ${
             uppercase ? "uppercase" : ""
           }`}
         >
           {title}
         </h1>
-        <div className="mt-6 h-px w-14 bg-gold" />
+        <div className="mt-6 h-px w-14 bg-haz-coral" />
         {description && (
-          <p className="mt-6 max-w-lg font-display text-lg leading-relaxed text-white/85">
+          <p className="mt-6 max-w-lg font-heading text-lg leading-relaxed text-white/85">
             {description}
           </p>
         )}

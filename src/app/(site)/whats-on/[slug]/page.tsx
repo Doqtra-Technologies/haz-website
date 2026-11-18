@@ -41,11 +41,11 @@ export default async function EventPage({ params }: { params: Promise<Params> })
         description={event.summary}
         image={event.bannerImage ?? event.image}
       />
-      <section className="bg-navy-900 py-12 sm:py-16">
+      <section className="bg-haz-terracotta py-12 sm:py-16">
         <Container>
           <div className={`grid items-start gap-10 ${event.detailImage ? "lg:grid-cols-[minmax(0,1fr)_minmax(280px,0.8fr)] lg:gap-16" : ""}`}>
             <div className="flex flex-col items-start gap-8">
-              <div className="max-w-2xl space-y-5 font-display text-lg leading-relaxed text-white/85">
+              <div className="max-w-2xl space-y-5 font-heading text-lg leading-relaxed text-white">
                 {event.body
                   .filter((paragraph) => !event.isPast || !paragraph.startsWith("Secure your spot"))
                   .map((p) => (
@@ -58,13 +58,13 @@ export default async function EventPage({ params }: { params: Promise<Params> })
                 </ul>
               </div>
               {!event.isPast && (
-                <ButtonLink href={event.ctaUrl ?? "/book"} variant="gold">
+                <ButtonLink href={event.ctaUrl ?? "/book"}>
                   {event.ctaLabel ?? "Reserve now"}
                 </ButtonLink>
               )}
             </div>
             {event.detailImage && (
-              <div className="relative mx-auto aspect-[4/5] w-full max-w-xl overflow-hidden border border-white/15 bg-[#1a0b0b]">
+              <div className="relative mx-auto aspect-[4/5] w-full max-w-xl overflow-hidden border border-white/15 bg-haz-espresso">
                 <Photo
                   slot={event.detailImage}
                   sizes="(min-width: 1024px) 40vw, 90vw"

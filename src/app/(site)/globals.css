@@ -2,15 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* HAZ Brand Guidelines 2026, p.28. Values are RGB channels for Tailwind's `haz-*` colours. */
+:root {
+  --haz-espresso: 26 11 11; /* #1A0B0B primary */
+  --haz-oat: 255 235 215; /* #FFEBD7 primary */
+  --haz-coral: 242 89 64; /* #F25940 primary */
+  --haz-porcelain: 252 246 240; /* #FCF6F0 secondary */
+  --haz-terracotta: 187 82 58; /* #BB523A secondary */
+
+  --haz-bg: var(--haz-espresso);
+  --haz-text: var(--haz-oat);
+  --haz-accent: var(--haz-coral);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-navy-950 font-sans text-white antialiased;
+    @apply bg-haz-espresso font-body font-light text-white antialiased;
+    /* Only Light and Medium are licensed for Documan, so never fake a bold. */
+    font-synthesis-weight: none;
   }
   ::selection {
-    @apply bg-ember text-white;
+    @apply bg-haz-coral text-haz-espresso;
   }
 }
 
@@ -19,6 +34,6 @@
     @apply text-[11px] uppercase tracking-eyebrow;
   }
   .field {
-    @apply w-full bg-navy-700/60 px-4 py-3.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-ember;
+    @apply w-full bg-haz-espresso/30 px-4 py-3.5 text-sm text-white placeholder:text-white/80 focus:outline-none focus:ring-1 focus:ring-haz-oat;
   }
 }

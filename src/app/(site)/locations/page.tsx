@@ -14,7 +14,7 @@ export default async function LocationsPage() {
 
   return (
     <>
-      <section className="relative flex min-h-[60vh] items-end overflow-hidden bg-navy-950 pt-28">
+      <section className="relative flex min-h-[60vh] items-end overflow-hidden bg-haz-espresso pt-28">
         <Photo slot={hero} priority sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20" />
         <Container className="relative pb-12">
@@ -32,9 +32,9 @@ export default async function LocationsPage() {
         </Container>
       </section>
 
-      <section className="bg-cream py-12 text-ink">
+      <section className="bg-haz-porcelain py-12 text-haz-espresso">
         <Container>
-          <p className="mx-auto max-w-3xl text-center text-xl font-extrabold uppercase leading-snug tracking-tight text-navy-900 sm:text-2xl">
+          <p className="mx-auto max-w-3xl text-center text-xl font-extrabold uppercase leading-snug tracking-tight text-haz-terracotta sm:text-2xl">
             EVERY HAZ HAS ITS OWN CHARACTER. FROM THE SETTING TO THE ATMOSPHERE,
             EACH RESTAURANT BRINGS A DISTINCT EXPERIENCE — UNITED BY MEDITERRANEAN
             FLAVOURS, WARM HOSPITALITY AND A LOVE OF BRINGING PEOPLE TOGETHER.
@@ -42,7 +42,7 @@ export default async function LocationsPage() {
         </Container>
       </section>
 
-      <section className="bg-cream pb-20 text-ink">
+      <section className="bg-haz-porcelain pb-20 text-haz-espresso">
         <Container>
           <LocationBrowser locations={locations} />
         </Container>

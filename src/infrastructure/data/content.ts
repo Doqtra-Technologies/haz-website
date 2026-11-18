@@ -81,6 +81,6 @@ export const siteContent: SiteContent = {
     ],
     ctaLabel: "More info",
     href: "/locations",
-    image: imageSlot("HAZ Finsbury Square dining room", "/images/haz-location-finsbury-1.webp"),
+    image: imageSlot("HAZ Finsbury Square dining room", "/images/locations/finsbury-square/cover-01.webp", "50% 60%"),
   },
 };

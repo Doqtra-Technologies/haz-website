@@ -53,15 +53,15 @@ export function BookingWidget() {
     (month.getFullYear() === today.getFullYear() && month.getMonth() > today.getMonth());
 
   return (
-    <div className="grid overflow-hidden border border-white/15 bg-[#1a0b0b] lg:grid-cols-[minmax(0,1.55fr)_minmax(260px,0.8fr)]">
+    <div className="grid overflow-hidden border border-white/15 bg-haz-espresso lg:grid-cols-[minmax(0,1.55fr)_minmax(260px,0.8fr)]">
       <div className="p-5 sm:p-8 lg:p-10">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-ember">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-haz-coral">
           Choose your restaurant
         </p>
 
         <label
           htmlFor="booking-restaurant"
-          className="mt-7 block text-[9px] font-semibold uppercase tracking-[0.25em] text-sand/75"
+          className="mt-7 block text-[9px] font-semibold uppercase tracking-[0.25em] text-haz-oat/75"
         >
           Location
         </label>
@@ -69,20 +69,20 @@ export function BookingWidget() {
           id="booking-restaurant"
           value={restaurantId}
           onChange={(event) => setRestaurantId(event.target.value)}
-          className="mt-2 h-11 w-full border border-white/15 bg-white/[0.06] px-3 text-sm text-white outline-none transition-colors focus:border-ember sm:max-w-xl"
+          className="mt-2 h-11 w-full border border-white/15 bg-white/[0.06] px-3 text-sm text-white outline-none transition-colors focus:border-haz-coral sm:max-w-xl"
         >
-          <option value="" className="bg-[#1a0b0b]">
+          <option value="" className="bg-haz-espresso">
             Select a restaurant
           </option>
           {restaurants.map((restaurant) => (
-            <option key={restaurant.id} value={restaurant.id} className="bg-[#1a0b0b]">
+            <option key={restaurant.id} value={restaurant.id} className="bg-haz-espresso">
               {restaurant.name}
             </option>
           ))}
         </select>
 
         <div className="mt-7 max-w-xl">
-          <p className="text-[9px] font-semibold uppercase tracking-[0.25em] text-sand/75">
+          <p className="text-[9px] font-semibold uppercase tracking-[0.25em] text-haz-oat/75">
             Date
           </p>
           <div className="mt-2 border border-white/15 bg-white/[0.04] p-3 sm:p-4">
@@ -92,18 +92,18 @@ export function BookingWidget() {
                 aria-label="Previous month"
                 disabled={!canGoToPreviousMonth}
                 onClick={() => setMonth(new Date(month.getFullYear(), month.getMonth() - 1, 1))}
-                className="flex h-8 w-8 items-center justify-center text-sand/70 transition-colors hover:text-white disabled:cursor-not-allowed disabled:opacity-25"
+                className="flex h-8 w-8 items-center justify-center text-haz-oat/70 transition-colors hover:text-white disabled:cursor-not-allowed disabled:opacity-25"
               >
                 ‹
               </button>
-              <p className="font-display text-sm text-sand-light">
+              <p className="font-heading text-sm text-haz-porcelain">
                 {month.toLocaleDateString("en-GB", { month: "long", year: "numeric" })}
               </p>
               <button
                 type="button"
                 aria-label="Next month"
                 onClick={() => setMonth(new Date(month.getFullYear(), month.getMonth() + 1, 1))}
-                className="flex h-8 w-8 items-center justify-center text-sand/70 transition-colors hover:text-white"
+                className="flex h-8 w-8 items-center justify-center text-haz-oat/70 transition-colors hover:text-white"
               >
                 ›
               </button>
@@ -112,7 +112,7 @@ export function BookingWidget() {
               {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((weekday) => (
                 <span
                   key={weekday}
-                  className="py-2 text-[8px] font-semibold uppercase tracking-[0.1em] text-sand/45 sm:text-[9px]"
+                  className="py-2 text-[8px] font-semibold uppercase tracking-[0.1em] text-haz-oat/45 sm:text-[9px]"
                 >
                   {weekday}
                 </span>
@@ -137,10 +137,10 @@ export function BookingWidget() {
                     onClick={() => setSelectedDate(dateKey)}
                     className={`mx-auto my-0.5 flex h-8 w-8 items-center justify-center text-[10px] transition-colors sm:h-9 sm:w-9 sm:text-[11px] ${
                       isSelected
-                        ? "bg-ember font-semibold text-white"
+                        ? "bg-haz-coral font-semibold text-haz-espresso"
                         : isPast
                           ? "cursor-not-allowed text-white/20"
-                          : "text-sand/80 hover:bg-white/10 hover:text-white"
+                          : "text-haz-oat/80 hover:bg-white/10 hover:text-white"
                     }`}
                   >
                     {day}
@@ -152,29 +152,29 @@ export function BookingWidget() {
         </div>
 
         <div className="mt-7 grid max-w-xl grid-cols-2 gap-4">
-          <label className="block text-[9px] font-semibold uppercase tracking-[0.25em] text-sand/75">
+          <label className="block text-[9px] font-semibold uppercase tracking-[0.25em] text-haz-oat/75">
             Time
             <select
               value={time}
               onChange={(event) => setTime(event.target.value)}
-              className="mt-2 h-11 w-full border border-white/15 bg-white/[0.06] px-3 text-sm normal-case tracking-normal text-white outline-none focus:border-ember"
+              className="mt-2 h-11 w-full border border-white/15 bg-white/[0.06] px-3 text-sm normal-case tracking-normal text-white outline-none focus:border-haz-coral"
             >
               {times.map((option) => (
-                <option key={option} value={option} className="bg-[#1a0b0b]">
+                <option key={option} value={option} className="bg-haz-espresso">
                   {option}
                 </option>
               ))}
             </select>
           </label>
-          <label className="block text-[9px] font-semibold uppercase tracking-[0.25em] text-sand/75">
+          <label className="block text-[9px] font-semibold uppercase tracking-[0.25em] text-haz-oat/75">
             Guests
             <select
               value={guests}
               onChange={(event) => setGuests(event.target.value)}
-              className="mt-2 h-11 w-full border border-white/15 bg-white/[0.06] px-3 text-sm normal-case tracking-normal text-white outline-none focus:border-ember"
+              className="mt-2 h-11 w-full border border-white/15 bg-white/[0.06] px-3 text-sm normal-case tracking-normal text-white outline-none focus:border-haz-coral"
             >
               {Array.from({ length: 30 }, (_, index) => index + 1).map((count) => (
-                <option key={count} value={count} className="bg-[#1a0b0b]">
+                <option key={count} value={count} className="bg-haz-espresso">
                   {count} {count === 1 ? "person" : "people"}
                 </option>
               ))}
@@ -187,7 +187,7 @@ export function BookingWidget() {
             href={bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-7 flex h-12 max-w-xl items-center justify-center bg-ember px-5 text-[10px] font-bold uppercase tracking-[0.22em] text-white transition-colors hover:bg-ember-dark"
+            className="mt-7 flex h-12 max-w-xl items-center justify-center bg-haz-coral px-5 text-[10px] font-bold uppercase tracking-[0.22em] text-haz-espresso transition-colors hover:bg-haz-oat"
           >
             Find a table
           </a>
@@ -195,7 +195,7 @@ export function BookingWidget() {
           <button
             type="button"
             disabled
-            className="mt-7 h-12 w-full max-w-xl cursor-not-allowed bg-ember/45 px-5 text-[10px] font-bold uppercase tracking-[0.22em] text-white/70"
+            className="mt-7 h-12 w-full max-w-xl cursor-not-allowed bg-haz-coral/45 px-5 text-[10px] font-bold uppercase tracking-[0.22em] text-white/70"
           >
             Select a location first
           </button>
@@ -204,10 +204,10 @@ export function BookingWidget() {
 
       <aside className="flex flex-col justify-between border-t border-white/15 bg-white/[0.025] p-5 sm:p-8 lg:border-l lg:border-t-0 lg:p-9">
         <div>
-          <p className="text-[9px] font-semibold uppercase tracking-[0.25em] text-ember">
+          <p className="text-[9px] font-semibold uppercase tracking-[0.25em] text-haz-coral">
             HAZ reservations
           </p>
-          <h2 className="mt-4 font-display text-2xl text-sand-light sm:text-3xl">
+          <h2 className="mt-4 font-heading text-2xl text-haz-porcelain sm:text-3xl">
             Your table, your time.
           </h2>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/65">
@@ -215,8 +215,8 @@ export function BookingWidget() {
           </p>
         </div>
         <div className="mt-8 border-t border-white/10 pt-5">
-          <p className="text-[9px] uppercase tracking-[0.2em] text-sand/50">Your selection</p>
-          <p className="mt-2 font-display text-lg text-white">
+          <p className="text-[9px] uppercase tracking-[0.2em] text-haz-oat/50">Your selection</p>
+          <p className="mt-2 font-heading text-lg text-white">
             {selectedRestaurant?.name ?? "Choose a restaurant"}
           </p>
           <p className="mt-1 text-xs text-white/55">
@@ -233,7 +233,7 @@ export function BookingWidget() {
             href={bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-7 flex min-h-12 items-center justify-center gap-2 bg-ember px-4 py-3 text-center text-[9px] font-bold uppercase tracking-[0.18em] text-white transition-colors hover:bg-ember-dark"
+            className="mt-7 flex min-h-12 items-center justify-center gap-2 bg-haz-coral px-4 py-3 text-center text-[9px] font-bold uppercase tracking-[0.18em] text-haz-espresso transition-colors hover:bg-haz-oat"
           >
             Book your table
             <span aria-hidden="true">→</span>

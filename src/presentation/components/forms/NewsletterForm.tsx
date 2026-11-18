@@ -34,20 +34,20 @@ export function NewsletterForm() {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="your.email"
           aria-label="Email address"
-          className="w-full bg-transparent py-3 text-2xl font-light text-white placeholder:text-white/30 focus:outline-none"
+          className="w-full bg-transparent py-3 text-2xl font-light text-white placeholder:text-white focus:outline-none"
         />
         <button
           type="submit"
           aria-label="Subscribe"
           disabled={status === "loading"}
-          className="pb-3 pl-4 text-white/70 hover:text-white disabled:opacity-40"
+          className="pb-3 pl-4 text-white hover:opacity-80 disabled:opacity-40"
         >
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
             <path d="M4 12h16M14 6l6 6-6 6" />
           </svg>
         </button>
       </div>
-      <p role="status" className="mt-2 min-h-5 text-xs text-white/60">
+      <p role="status" className="mt-2 min-h-5 text-xs text-white">
         {status === "done" && "Thank you for subscribing."}
         {status === "error" && "Something went wrong. Please check your email and try again."}
       </p>

@@ -5,11 +5,9 @@ import Image from "next/image";
 import type { ImageSlot } from "@/core/domain/entities/image";
 
 const tones = [
-  "from-[#4a2314] to-[#150b07]",
-  "from-[#3a2a1a] to-[#120d08]",
-  "from-[#1d3347] to-[#0a1722]",
-  "from-[#5a2a18] to-[#1c0e08]",
-  "from-[#2b3a2c] to-[#0d140e]",
+  "from-haz-terracotta to-haz-espresso",
+  "from-haz-espresso to-haz-terracotta",
+  "from-haz-coral/70 to-haz-espresso",
 ];
 
 function toneFor(label: string) {
@@ -49,7 +47,7 @@ export function Photo({
         priority={priority}
         onError={() => setFailed(true)}
         className={`object-cover ${className}`}
-        style={{ objectFit: fit }}
+        style={{ objectFit: fit, objectPosition: slot.position }}
       />
     );
   }

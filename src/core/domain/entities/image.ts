@@ -6,9 +6,12 @@
 export interface ImageSlot {
   label: string;
   src?: string;
+  /** CSS object-position, so cropped photos keep their subject in frame. */
+  position?: string;
 }
 
-export const imageSlot = (label: string, src?: string): ImageSlot => ({
+export const imageSlot = (label: string, src?: string, position?: string): ImageSlot => ({
   label,
   src,
+  ...(position && { position }),
 });
